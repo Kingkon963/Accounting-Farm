@@ -1,0 +1,35 @@
+.FooterDiv{
+    background-color: var(--color-4);
+    //background: rgb(29,53,87);
+    background: linear-gradient(132deg, rgba(50,91,117,1) 0%, rgba(29,53,87,1) 100%);
+    color: white;
+    min-height: 30vh;
+    width: 100%;
+   // position: fixed;
+    //bottom: 0;
+    padding: 1rem;
+    margin-top: auto;
+
+    .brandLogo{
+        margin-bottom: 1em;
+    }
+
+    .footerGrid{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        hr{
+            width: 3.5em;
+            height: 2px;
+            background-color: whitesmoke;
+            margin-left: 0;
+            margin-top: .7em;
+        }
+        .gridSection{
+
+        }
+    }
+
+   
+}

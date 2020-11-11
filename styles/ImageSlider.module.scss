@@ -1,0 +1,18 @@
+.wrapper{
+    background-color: yellowgreen;
+    overflow: hidden;
+}
+.slider{
+    display: flex;
+    overflow-x: scroll;
+    .imageWrapper{
+        //width: 100%;
+        border: 1px red solid;
+        margin-right: 10px;
+        img{
+            border: 1px yellow solid;
+            width: auto;
+            height: auto;
+        }
+    }
+}
