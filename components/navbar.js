@@ -21,7 +21,7 @@ function Collapse(props) {
     }, [props.isOpen])
 
     return(
-        <div className={styles.collapse} ref={refCollapse}>
+        <div className={props.className} ref={refCollapse}>
             {props.children}
         </div>
     )
@@ -30,6 +30,7 @@ function Collapse(props) {
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isTopBarOpen, setisTopBarOpen] = useState(false);
     const [Height, setHeight] = useState(0);
 
     const ref = createRef();
@@ -48,20 +49,34 @@ export default function NavBar() {
     const toggleNav = () => {
         setIsOpen(!isOpen);
     }
+    const toggleTopBar = (e) => {
+        
+        setisTopBarOpen(!isTopBarOpen);
+    }
     return (
          
         <div className={styles.Navbar} ref={ref}>
+            <Collapse isOpen={isTopBarOpen} className={styles.navTopBar}>
+                <div className={styles.contacts}>
+                    <span className={styles.location}>Dhaka-1207, Cant.</span>
+                    <a className={styles.phoneNumber} href="tel:01521517533">
+                        <span className='fa fa-phone mr-2'></span>
+                        01521517533
+                    </a>
+                </div>
+                
+            </Collapse>
             <Link href="/">
-                <a className={styles.navbarBrand}>Healthcare</a>
+                <a className={styles.navbarBrand}>Tax Assist</a>
             </Link>
             <div className={styles.btnGroup}>
-                <span className={`fa fa-phone ${styles.phoneIcon}`}></span>
+                <span className={`fa ${isTopBarOpen?'fa-chevron-up':'fa-phone'} ${styles.phoneIcon}`} onClick={toggleTopBar}></span>
                 <button className={styles.toggler} onClick={toggleNav}>
                     <span className={`fa ${isOpen ? 'fa-chevron-up' : 'fa-bars'}`}></span>
                 </button>
             </div>
             
-            <Collapse isOpen={isOpen}>
+            <Collapse isOpen={isOpen} className={styles.collapseNav}>
                 <ul className={styles.nav}>
                     <li className={styles.navItem}>
                         <Link href='/'>

@@ -9,9 +9,10 @@ export default function Home() {
       <h1 className={styles.title}>Home</h1>
       <p>This is a paragraph</p>
       <ImageSlider>
-        <img src="http://via.placeholder.com/300x300" alt="" />
-        <img src="http://via.placeholder.com/300x300" alt=""/>
-        <img src="http://via.placeholder.com/300x300" alt=""/>
+        <img src="images/nature.jpg" alt="nature" />
+        <img src="images/autumn.jpg" alt="autumn" />
+        <img src="http://via.placeholder.com/300x298" alt=""/>
+        <img src="http://via.placeholder.com/150x200" alt=""/>
       </ImageSlider>
     </Layout>
   )
