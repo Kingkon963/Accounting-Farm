@@ -67,7 +67,7 @@ export default function NavBar() {
                 
             </Collapse>
             <Link href="/">
-                <a className={styles.navbarBrand}>Tax Assist</a>
+                <a className={styles.navbarBrand}>TaxAssist</a>
             </Link>
             <div className={styles.btnGroup}>
                 <span className={`fa ${isTopBarOpen?'fa-chevron-up':'fa-phone'} ${styles.phoneIcon}`} onClick={toggleTopBar}></span>

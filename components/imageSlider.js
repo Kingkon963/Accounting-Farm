@@ -1,6 +1,21 @@
 import { useEffect, useState } from 'react';
 import styles from '../styles/ImageSlider.module.scss';
 
+function Navigator({imageIndex, setImageIndex, totalIndex}){
+    const navItems = []
+    for(let i=0; i<totalIndex; i++){
+        navItems.push(
+            <div className={`${styles.navItem} ${imageIndex===i ? styles.active: ''}`} key={i}
+             onClick={() => setImageIndex(i)}></div>
+        )
+    }
+    return(
+        <div className={styles.Navigator}>
+            {navItems}
+        </div>
+    )
+}
+
 export default function ImageSlider({ children }){
     const [imageIndex, setImageIndex] = useState(0);
     
@@ -20,7 +35,7 @@ export default function ImageSlider({ children }){
         <div className={styles.wrapper}>
             <div className={styles.slider}>
                 <div className={styles.imageWrapper} key={imageIndex}>
-                    <h1 className={styles.caption}>{imageIndex}</h1>
+                    
                     
                     <button className={styles.next} onClick={next}>
                         <span className='fa fa-chevron-right'></span>
@@ -28,6 +43,7 @@ export default function ImageSlider({ children }){
                     <button className={styles.prev} onClick={prev}>
                         <span className='fa fa-chevron-left'></span>
                     </button>
+                    <Navigator imageIndex={imageIndex} totalIndex={children.length} setImageIndex={setImageIndex}/>
 
                     {children[imageIndex]}
                 </div>

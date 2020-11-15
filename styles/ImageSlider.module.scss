@@ -1,7 +1,7 @@
 $height: 50vh;
 
 .wrapper{
-    background-color: yellowgreen;
+    background-color: var(--color-1);
     overflow: hidden;
     height: $height;
 }
@@ -23,7 +23,7 @@ $height: 50vh;
         }
         img[alt="autumn"]{
             top: -15em;
-            left: -17em;
+            left: -90em;
         }
         img[alt="nature"]{
             top: -15em;
@@ -55,6 +55,27 @@ $height: 50vh;
         }
         .prev{
             margin-left: -.1em;
+        }
+        .Navigator{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            padding-left: 1em;
+            padding-top: .5em;
+            opacity: 1;
+            .navItem{
+                min-width: 50px;
+                min-height: 20px;
+                border: 1px solid whitesmoke;
+                margin-right: 1em;
+                cursor: pointer;
+            }
+            .active{
+                background-color: whitesmoke;
+            }
         }
     }
 }

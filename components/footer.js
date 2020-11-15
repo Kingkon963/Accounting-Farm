@@ -14,7 +14,7 @@ export default function Footer() {
     }, [Height])
     return(
         <footer className={styles.FooterDiv} ref={ref}>
-            <h2 className={styles.brandLogo}>Healthcare</h2>
+            <h2 className={styles.brandLogo}>TaxAssist</h2>
             <div className={styles.footerGrid}>
                 <div className={styles.gridSection}>
                     <h4>Services</h4>

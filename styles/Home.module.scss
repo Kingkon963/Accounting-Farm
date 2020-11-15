@@ -1,3 +1,39 @@
-.title{
-    border: lightblue 1px solid;
+.header{
+    color: var(--color-4);
+    background-color: var(--color-1);
+    padding: 1em;
+    text-align: left;
+    position: relative;
+    //border: 1px red solid;
+    min-height: 25vh;
+    font-family: 'Roboto', sans-serif;
+    .btnGroup{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 20%;
+        right: 0;
+        margin-top: -1em;
+        padding-right: 1em;
+        //border: springgreen 1px solid;
+        button{
+            border: 1px solid var(--color-4);
+            background: var(--color-4);
+            margin: .5em 0;
+            color: var(--color-1);
+            text-align: center;
+            box-shadow: 3px 3px 1px gray;
+            outline: none;
+        }
+        button:active{
+            box-shadow:  2px 2px 1px gray;
+            transform: scale(.9);
+        }
+    }
+    .description{
+        
+        @media only screen and(min-width: 768px){
+            max-width: 50%;
+        }
+    }
 }
