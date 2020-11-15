@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import styles from '../styles/Home.module.scss'
 import ImageSlider from '../components/imageSlider'
-import Map from '../components/Map'
+import ContactForm from '../components/ContactForm'
+
 
 export default function Home() {
   const location = {
@@ -34,14 +35,9 @@ export default function Home() {
         <img src="http://via.placeholder.com/150x200" alt=""/>
       </ImageSlider>
 
-      <Map 
-        location={{
-          address: '20, Sukrabad, Dhaka.',
-          lat: 23.752683,
-          lng: 90.379913,
-        }}
-        zoomLevel={15}
-      />
+      <div className='p-3'>
+        <ContactForm />
+      </div>
     </Layout>
   )
 }

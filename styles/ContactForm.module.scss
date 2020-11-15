@@ -1,0 +1,22 @@
+.Form{
+    label{
+        font-weight: bold;
+        margin: 0;
+        color: var(--color-4);
+    }
+    input, textarea{
+        border-color: var(--color-4);
+    }
+    .sendBtn{
+        width: 100%;
+        border-color: var(--color-4);
+        outline: none;
+        background-color: transparent;
+        font-weight: bold;
+        padding: .4em 0;
+    }
+    .sendBtn:active{
+        background-color: var(--color-4);
+        color: whitesmoke;
+    }
+}
