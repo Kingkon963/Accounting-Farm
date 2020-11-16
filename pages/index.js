@@ -35,9 +35,11 @@ export default function Home() {
         <img src="http://via.placeholder.com/150x200" alt=""/>
       </ImageSlider>
 
+
       <div className='p-3'>
         <ContactForm />
       </div>
+
     </Layout>
   )
 }
