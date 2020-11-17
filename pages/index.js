@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Layout from '../components/layout'
 import styles from '../styles/Home.module.scss'
 import ImageSlider from '../components/imageSlider'
@@ -29,12 +30,9 @@ export default function Home() {
       </header>
       
       <ImageSlider>
-        <img src="images/nature.jpg" alt="nature" />
-        <img src="images/autumn.jpg" alt="autumn" />
-        <img src="http://via.placeholder.com/300x298" alt=""/>
-        <img src="http://via.placeholder.com/150x200" alt=""/>
+        <Image src="/images/nature.jpg" alt="nature" width={1920} height={1080} quality={100}/>
+        <Image src="/images/autumn.jpg" alt="autumn" width={1920} height={1080}/>
       </ImageSlider>
-
 
       <div className='p-3'>
         <ContactForm />

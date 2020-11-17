@@ -20,11 +20,17 @@ export default function ContactForm(){
             default:
                 console.log("Error handling the onChange Event in ContactForm!"); 
         }
-        //console.log(e.target.value);
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(Name);
+        console.log(Email);
+        console.log(Message);
+    }
+
     return(
-        <form className={styles.Form} onSubmit={(e) => e.preventDefault()}>
+        <form className={styles.Form} onSubmit={handleSubmit}>
             <div className='form-group'>
                 <label htmlFor="name">Name</label>
                 <input type="text" name='name' className={`form-control ${styles.nameInput}`} value={Name} onChange={handleChange}/>

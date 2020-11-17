@@ -1,4 +1,4 @@
-$height: 50vh;
+$height: auto;
 
 .wrapper{
     background-color: var(--color-1);
@@ -12,7 +12,7 @@ $height: 50vh;
         height: $height;
         border: 1px red solid;
         position: relative;
-        img{
+        .img{
             position: absolute;
             top: 0px;
             left: 0px;
@@ -21,14 +21,14 @@ $height: 50vh;
             //width: 100%;
             height: auto;
         }
-        img[alt="autumn"]{
+       /* .img[alt="autumn"]{
             top: -15em;
             left: -90em;
         }
-        img[alt="nature"]{
+        .img[alt="nature"]{
             top: -15em;
             left: -13em;
-        }
+        }*/
         .caption{
             position: absolute;
             top: 0;
