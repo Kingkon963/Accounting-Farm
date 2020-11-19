@@ -1,6 +1,5 @@
-module.exports = (req, res) => {
+export default function handler (req, res) {
     res.statusCode = 200
-    res.json({
-        msg: "hi"
-    })
+    res.setHeader('content-type', 'text/html')
+    res.send(`<h1>Bismillah</h1>`)
 }
