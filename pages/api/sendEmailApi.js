@@ -1,3 +1,6 @@
 module.exports = (req, res) => {
-    res.status(200).send(`${JSON.stringify(req)}`)
+    res.statusCode = 200
+    res.json({
+        msg: "hi"
+    })
 }

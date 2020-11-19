@@ -2,10 +2,10 @@
 
 module.exports = (req, res) => {
   res.statusCode = 200
-  res.body = {
+  /*res.body = {
     header:{
       'Content-Type': 'application/json'
     }
-  }
+  }*/
   res.json({ name: 'John Doe' })
 }
