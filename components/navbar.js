@@ -1,7 +1,9 @@
-import { useState, useEffect, createRef } from "react"
+import { useState, useEffect, createRef, useRef } from "react"
 import Link from 'next/link'
+import useResponsiveBreakpoints from '../utils/useResponsiveBreakpoints'
 
 import styles from '../styles/NavBar.module.scss';
+
 
 
 
@@ -33,7 +35,13 @@ export default function NavBar() {
     const [isTopBarOpen, setisTopBarOpen] = useState(false);
     const [Height, setHeight] = useState(0);
 
-    const ref = createRef();
+    const ref = useRef(null);
+    const vw = useResponsiveBreakpoints(ref, [
+        { small: 415 },
+        { medium: 769 },
+        { large: 993 }
+    ])
+
 
     function setBobyPaddingTop(value){
         document.body.style.paddingTop = value+'px';
@@ -43,16 +51,21 @@ export default function NavBar() {
         if(ref.current){
             setHeight(ref.current.getBoundingClientRect().bottom - ref.current.getBoundingClientRect().top);
             setBobyPaddingTop(Height);
+            if(Height != 0) console.log("Height: "+Height);
         }
     }, [Height])
+    useEffect(() => {
+        if(vw === 'large') setIsOpen(true);
+        else setIsOpen(false);
+    }, [vw])
 
     const toggleNav = () => {
         setIsOpen(!isOpen);
     }
     const toggleTopBar = (e) => {
-        
         setisTopBarOpen(!isTopBarOpen);
     }
+
     return (
          
         <div className={styles.Navbar} ref={ref}>
@@ -64,16 +77,20 @@ export default function NavBar() {
                         01521517533
                     </a>
                 </div>
-                
             </Collapse>
+
             <Link href="/">
                 <a className={styles.navbarBrand}>TaxAssist</a>
             </Link>
+
             <div className={styles.btnGroup}>
                 <span className={`fa ${isTopBarOpen?'fa-chevron-up':'fa-phone'} ${styles.phoneIcon}`} onClick={toggleTopBar}></span>
+                
+                {vw !== 'large' && 
                 <button className={styles.toggler} onClick={toggleNav}>
                     <span className={`fa ${isOpen ? 'fa-chevron-up' : 'fa-bars'}`}></span>
                 </button>
+                }
             </div>
             
             <Collapse isOpen={isOpen} className={styles.collapseNav}>

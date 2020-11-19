@@ -46,6 +46,7 @@ export default function handler(req, res) {
     case 'GET':
       res.setHeader('Content-Type', 'text/plain')
       res.status(200).send("This endpoint only receives POST requests")
+      //res.status(200).redirect("http://localhost:3000")
       break;
     case 'POST':
       res.setHeader('Content-Type', 'application/json')

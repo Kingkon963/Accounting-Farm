@@ -1,3 +1,19 @@
+@mixin sm {
+    @media only screen and(min-width: 0px){
+        @content;
+    }
+}
+@mixin md {
+    @media only screen and(min-width: 415px){
+        @content;
+    }
+}
+@mixin lg {
+    @media only screen and(min-width: 769px){
+        @content;
+    }
+}
+
 .Navbar{
     background-color: var(--color-3);
     background: linear-gradient(132deg, rgba(50,91,117,1) 0%, rgba(29,53,87,1) 100%);
