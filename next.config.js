@@ -2,7 +2,7 @@ module.exports = {
     async headers() {
       return [
         {
-          source: '/:path*',
+          source: '/api/*',
           headers: [
             {
               key: 'Content-Type',
