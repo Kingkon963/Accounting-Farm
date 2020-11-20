@@ -2,6 +2,8 @@ import React from "react";
 import ResizeObserver from 'resize-observer-polyfill';
 //import dynamic from 'next/dynamic'
 
+const ExtraWidth = 30; // It only measures content widht. Therefore if margin/border/padding needs to add with the final result
+
 //const useState = dynamic(() => import("react"), { ssr: false });
 
 function useResponsiveBreakpoints(elRef, breakpoints) {
@@ -12,9 +14,10 @@ function useResponsiveBreakpoints(elRef, breakpoints) {
     const observer = React.useRef(
         new ResizeObserver(entries => {
         // Only care about the first element, we expect one element ot be watched
-        const { width } = entries[0].contentRect;
-        console.log(width+18)
-        setBreakSize(findBreakPoint(breakpoints, width+18));
+        //const { width } = entries[0].contentRect;
+        const width = entries[0].contentRect.width;
+        console.log(width+ExtraWidth)
+        setBreakSize(findBreakPoint(breakpoints, width+ExtraWidth));
         })
     );
   
@@ -26,7 +29,9 @@ function useResponsiveBreakpoints(elRef, breakpoints) {
     }
 
     return () => {
-      observer.current.unobserve(elRef);
+      if(elRef.current){
+        observer.current.unobserve(elRef.current);
+      }
     };
   }, [elRef, observer]);
 

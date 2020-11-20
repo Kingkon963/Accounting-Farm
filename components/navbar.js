@@ -83,17 +83,8 @@ export default function NavBar() {
                 <a className={styles.navbarBrand}>TaxAssist</a>
             </Link>
 
-            <div className={styles.btnGroup}>
-                <span className={`fa ${isTopBarOpen?'fa-chevron-up':'fa-phone'} ${styles.phoneIcon}`} onClick={toggleTopBar}></span>
-                
-                {vw !== 'large' && 
-                <button className={styles.toggler} onClick={toggleNav}>
-                    <span className={`fa ${isOpen ? 'fa-chevron-up' : 'fa-bars'}`}></span>
-                </button>
-                }
-            </div>
-            
-            <Collapse isOpen={isOpen} className={styles.collapseNav}>
+            {vw === 'large' && 
+                <Collapse isOpen={isOpen} className={styles.collapseNav}>
                 <ul className={styles.nav}>
                     <li className={styles.navItem}>
                         <Link href='/'>
@@ -111,7 +102,40 @@ export default function NavBar() {
                         </Link>
                     </li>
                 </ul>
-            </Collapse>
+                </Collapse>
+            }
+
+            <div className={styles.btnGroup}>
+                <span className={`fa ${isTopBarOpen?'fa-chevron-up':'fa-phone'} ${styles.phoneIcon}`} onClick={toggleTopBar}></span>
+                
+                {vw !== 'large' && 
+                    <button className={styles.toggler} onClick={toggleNav}>
+                        <span className={`fa ${isOpen ? 'fa-chevron-up' : 'fa-bars'}`}></span>
+                    </button>
+                }
+            </div>
+            
+            {vw !== 'large' && 
+                <Collapse isOpen={isOpen} className={styles.collapseNav}>
+                    <ul className={styles.nav}>
+                        <li className={styles.navItem}>
+                            <Link href='/'>
+                                <a className={styles.navLink}>Home</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link href='/'>
+                                <a className={styles.navLink}>Services</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link href='/aboutus'>
+                                <a className={styles.navLink}>About Us</a>
+                            </Link>
+                        </li>
+                    </ul>
+                </Collapse>
+            }
         </div>
 
     )
