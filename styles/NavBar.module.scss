@@ -183,4 +183,10 @@
             padding: .4em;
         }
     }
+    .navLink:hover{
+        background-color: var(--color-3);
+    }
+    .activeLink{
+        background-color: var(--color-3);
+    }
 }

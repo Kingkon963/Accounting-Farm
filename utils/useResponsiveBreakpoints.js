@@ -16,7 +16,7 @@ function useResponsiveBreakpoints(elRef, breakpoints) {
         // Only care about the first element, we expect one element ot be watched
         //const { width } = entries[0].contentRect;
         const width = entries[0].contentRect.width;
-        console.log(width+ExtraWidth)
+        //console.log(width+ExtraWidth)
         setBreakSize(findBreakPoint(breakpoints, width+ExtraWidth));
         })
     );
@@ -24,7 +24,6 @@ function useResponsiveBreakpoints(elRef, breakpoints) {
 
   React.useEffect(() => {
     if (elRef.current) {
-      console.log(typeof elRef)
       observer.current.observe(elRef.current);
     }
 

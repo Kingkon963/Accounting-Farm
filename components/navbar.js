@@ -1,4 +1,5 @@
 import { useState, useEffect, createRef, useRef } from "react"
+import { useRouter } from "next/router"
 import Link from 'next/link'
 import useResponsiveBreakpoints from '../utils/useResponsiveBreakpoints'
 
@@ -9,6 +10,7 @@ import styles from '../styles/NavBar.module.scss';
 
 function Collapse(props) {
     const refCollapse = createRef()
+    
     const toggleCollapse = () => {
         if(props.isOpen){
             refCollapse.current.style.display = 'block';
@@ -34,6 +36,7 @@ export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isTopBarOpen, setisTopBarOpen] = useState(false);
     const [Height, setHeight] = useState(0);
+    const router = useRouter();
 
     const ref = useRef(null);
     const vw = useResponsiveBreakpoints(ref, [
@@ -88,17 +91,17 @@ export default function NavBar() {
                 <ul className={styles.nav}>
                     <li className={styles.navItem}>
                         <Link href='/'>
-                            <a className={styles.navLink}>Home</a>
+                            <a className={`${styles.navLink} ${router.pathname === '/' ? styles.activeLink :''}`}>Home</a>
                         </Link>
                     </li>
                     <li className={styles.navItem}>
                         <Link href='/'>
-                            <a className={styles.navLink}>Services</a>
+                            <a className={`${styles.navLink} ${router.pathname === '/services' ? styles.activeLink :''} `}>Services</a>
                         </Link>
                     </li>
                     <li className={styles.navItem}>
                         <Link href='/aboutus'>
-                            <a className={styles.navLink}>About Us</a>
+                            <a className={`${styles.navLink} ${router.pathname === '/aboutus' ? styles.activeLink :''} `}>About Us</a>
                         </Link>
                     </li>
                 </ul>
@@ -120,7 +123,7 @@ export default function NavBar() {
                     <ul className={styles.nav}>
                         <li className={styles.navItem}>
                             <Link href='/'>
-                                <a className={styles.navLink}>Home</a>
+                                <a className={`${styles.navLink}`}>Home</a>
                             </Link>
                         </li>
                         <li className={styles.navItem}>
