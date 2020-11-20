@@ -12,6 +12,7 @@ export default function Home() {
     <Layout>
       <Head>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
       <header className={styles.header}>
         <h1 className={styles.title}>Welcome to TaxAssist Accountants</h1>

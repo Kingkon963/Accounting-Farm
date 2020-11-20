@@ -2,34 +2,9 @@ import { useState, useEffect, createRef, useRef } from "react"
 import { useRouter } from "next/router"
 import Link from 'next/link'
 import useResponsiveBreakpoints from '../utils/useResponsiveBreakpoints'
+import Collapse from '../utils/collapse'
 
 import styles from '../styles/NavBar.module.scss';
-
-
-
-
-function Collapse(props) {
-    const refCollapse = createRef()
-    
-    const toggleCollapse = () => {
-        if(props.isOpen){
-            refCollapse.current.style.display = 'block';
-        }
-        else{
-            refCollapse.current.style.display = 'none';
-        }
-            
-    }
-    useEffect(() => {
-        toggleCollapse();
-    }, [props.isOpen])
-
-    return(
-        <div className={props.className} ref={refCollapse}>
-            {props.children}
-        </div>
-    )
-}
 
 
 export default function NavBar() {
@@ -53,8 +28,8 @@ export default function NavBar() {
     useEffect(() => {
         if(ref.current){
             setHeight(ref.current.getBoundingClientRect().bottom - ref.current.getBoundingClientRect().top);
-            setBobyPaddingTop(Height);
-            if(Height != 0) console.log("Height: "+Height);
+            document.body.style.paddingTop = Height+'px';
+            //if(Height != 0) console.log("Height: "+Height);
         }
     }, [Height])
     useEffect(() => {
