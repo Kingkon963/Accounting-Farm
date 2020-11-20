@@ -98,17 +98,17 @@ export default function NavBar() {
                     <ul className={styles.nav}>
                         <li className={styles.navItem}>
                             <Link href='/'>
-                                <a className={`${styles.navLink}`}>Home</a>
+                                <a className={`${styles.navLink} ${router.pathname === '/' ? styles.activeLink :''}`}>Home</a>
                             </Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link href='/'>
-                                <a className={styles.navLink}>Services</a>
+                                <a className={`${styles.navLink} ${router.pathname === '/services' ? styles.activeLink :''}`}>Services</a>
                             </Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link href='/aboutus'>
-                                <a className={styles.navLink}>About Us</a>
+                                <a className={`${styles.navLink} ${router.pathname === '/aboutus' ? styles.activeLink :''}`}>About Us</a>
                             </Link>
                         </li>
                     </ul>
