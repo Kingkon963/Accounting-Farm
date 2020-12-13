@@ -1,12 +1,71 @@
 .header{
     color: var(--color-4);
     background-color: var(--color-1);
-    padding: 1em;
+   // padding: 1em;
     text-align: left;
     position: relative;
+    display: block;
     //border: 1px red solid;
     min-height: 25vh;
     font-family: 'Roboto', sans-serif;
+    @media only screen and(min-width: 768px){
+        height: 94vh;
+        /*background-image: url('../public/images/wave.svg');
+        background-repeat: no-repeat;
+        background-position: center bottom;*/
+    }
+    .headerGrid{
+        border: 1px solid black;
+        display: grid;
+        @media only screen and(min-width: 768px){
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            min-height: 100%;
+        }
+
+        .left{
+            //border: 1px solid red;
+            //height: 250%;  
+            padding: 1em;
+        }
+        .right{
+            //border: 1px solid red;  
+            height: 100%;
+            padding: 0px;
+            overflow: hidden;
+            .headerImage{
+                //border: 1px solid blue;
+                background-image: url('../public/images/bg-header.jpg');
+                height: 100%;
+                background-position: 60% 20%;
+                background-repeat: no-repeat;
+                background-size: 90em;
+                padding: 0px;
+            }
+        }
+    }
+
+    .bottom svg{
+        //border: 2px solid green;
+        //margin-top: auto;
+        z-index: 2;
+        
+        display: block;
+        @media only screen and(min-width: 768px){
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .title{
+        //border: 1px solid black;
+        @media only screen and(min-width: 768px){
+            font-size: 4em;
+            //text-align: center;
+            margin-top: 1em;
+            line-height: 1.1em;
+        }
+    }
     .btnGroup{
         display: flex;
         flex-direction: column;
@@ -15,7 +74,13 @@
         right: 0;
         margin-top: -1em;
         padding-right: 1em;
-        //border: springgreen 1px solid;
+       // border: springgreen 1px solid;
+        @media only screen and(min-width: 768px){
+            position: static;
+            margin-bottom: auto;
+            flex-direction: row;
+            justify-content: start;
+        }
         button{
             border: 1px solid var(--color-4);
             background: var(--color-4);
@@ -24,6 +89,12 @@
             text-align: center;
             box-shadow: 3px 3px 1px gray;
             outline: none;
+            z-index: 3;
+            @media only screen and(min-width: 768px){
+                padding: .5em 2em;
+                //border-radius: 50%;
+                margin-right: 30px;
+            }
         }
         button:active{
             box-shadow:  2px 2px 1px gray;
@@ -33,7 +104,13 @@
     .description{
         
         @media only screen and(min-width: 768px){
-            max-width: 50%;
+           // border: 1px solid black;
+            font-size: 1.2em;
+            word-spacing: .2em;
+            letter-spacing: 0;
+            line-height: 1.5em;
+            margin-top: 1em;
+            margin-bottom: 2em;
         }
     }
 }

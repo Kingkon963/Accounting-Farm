@@ -10,7 +10,9 @@ $height: auto;
     .imageWrapper{
         width: 100%;
         height: $height;
-        border: 1px red solid;
+        //border: 1px red solid;
+        padding: 0px;
+        margin: 0px;
         position: relative;
         .img{
             position: absolute;
@@ -20,6 +22,8 @@ $height: auto;
             border: 1px yellow solid;
             //width: 100%;
             height: auto;
+            display: block;
+            
         }
        /* .img[alt="autumn"]{
             top: -15em;
