@@ -14,6 +14,7 @@ $height: auto;
         padding: 0px;
         margin: 0px;
         position: relative;
+        background-color: #203B5C;
         .img{
             position: absolute;
             top: 0px;
@@ -72,10 +73,14 @@ $height: auto;
             opacity: 1;
             .navItem{
                 min-width: 50px;
-                min-height: 20px;
+                min-height: 5px;
                 border: 1px solid whitesmoke;
                 margin-right: 1em;
                 cursor: pointer;
+                @media only screen and(min-width: 768px){
+                    min-width: 50px;
+                    min-height: 20px;
+                }
             }
             .active{
                 background-color: whitesmoke;

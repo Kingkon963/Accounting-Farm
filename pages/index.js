@@ -48,20 +48,34 @@ export default function Home() {
       </header>
 
 
-      <div className="container-fluid bg-primary">
-        <div className="row">
-          <div className="col-6">
+      <div className={`container-fluid`}>
+        <div className={`row ${styles.secondSection}`}>
+          <div className="col-12 px-0 px-sm-4 col-sm-6">
             <ImageSlider>
               <Image src="/images/nature.jpg" alt="nature" width={1920} height={1080} quality={100} />
               <Image src="/images/autumn.jpg" alt="autumn" width={1920} height={1080} />
             </ImageSlider>
           </div>
         </div>
+
+        <div className="row">
+          <div className={`col-12 p-0 d-none ${styles.rotate180}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path fill="#203B5C" fill-opacity="1" d="M0,160L60,154.7C120,149,240,139,360,160C480,181,600,235,720,256C840,277,960,267,1080,234.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg>
+          </div>
+          <div className="col-sm-7 text-center">
+            <h1>Contact Us</h1>
+          </div>
+          <div className="col-12 col-sm-5">
+            <div className="py-3">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className='p-3'>
-        <ContactForm />
-      </div>
+      
 
     </Layout>
   )

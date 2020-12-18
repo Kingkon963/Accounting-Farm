@@ -1,3 +1,6 @@
+.rotate180{
+    transform: rotate(180deg);
+}
 .header{
     color: var(--color-4);
     background-color: var(--color-1);
@@ -15,7 +18,7 @@
         background-position: center bottom;*/
     }
     .headerGrid{
-        border: 1px solid black;
+        //border: 1px solid black;
         display: grid;
         @media only screen and(min-width: 768px){
             grid-template-columns: 1fr 1fr;
@@ -27,6 +30,9 @@
             //border: 1px solid red;
             //height: 250%;  
             padding: 1em;
+            @media only screen and(min-width: 768px){
+                padding-left: 2em;    
+            }
         }
         .right{
             //border: 1px solid red;  
@@ -113,4 +119,11 @@
             margin-bottom: 2em;
         }
     }
+}
+
+.secondSection{
+    background-color: #203B5C;
+    padding: 5em 0px;
+    top:-1px;
+    position: relative;
 }
