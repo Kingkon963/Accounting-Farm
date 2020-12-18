@@ -2,7 +2,7 @@ import { useState, useEffect, createRef, useRef } from "react"
 import { useRouter } from "next/router"
 import Link from 'next/link'
 import useResponsiveBreakpoints from '../utils/useResponsiveBreakpoints'
-import Collapse from '../utils/collapse'
+import Collapse from '../utils/Collapse'
 
 import styles from '../styles/NavBar.module.scss';
 
